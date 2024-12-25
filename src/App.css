@@ -1,0 +1,562 @@
+/* الجسم */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #5a4d4d, #dbb592);
+    color: #fff;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* خفف العرض إلى 80% أو أي قيمة تناسبك */
+    padding: 20px 20%; /* قلل الحواف الداخلية */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0); /* الهيدر شفاف */
+    z-index: 80;
+    margin: 0 auto; /* محاذاة الهيدر في المنتصف */
+  }
+  
+  .logo img {
+    height: 50px;
+    
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: center; /* محاذاة العناصر أفقيًا */
+  align-items: center;    /* محاذاة العناصر رأسيًا */
+  gap: 40px;              /* مسافة بين الأزرار */
+  padding: 10px 20px;     /* مساحة داخلية للهيدر */
+  margin-right: auto; /* يدفع العناصر بعيداً عن أقصى اليمين */
+  margin-left: 500px; /* تعديل على حسب حاجتك */
+  max-width: 70%; /* اجعلي القائمة تحتل جزءًا أصغر من الهيدر */
+  margin: 0 auto; /* محاذاة للنص */
+  grid-template-columns: repeat(4, auto); /* عدد الأزرار */
+  justify-content: center; /* يحرك العناصر باتجاه النص */
+  gap: 15px; /* مسافة بين الأزرار */
+
+  }
+  
+  .nav-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .nav-btn:hover {
+    color: #dbb592;
+  }
+  
+/* تحسين الهيدر للجوالات */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* ترتيب الهيدر عمودي */
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav {
+    flex-direction: column; /* ترتيب الأزرار عمودي */
+    gap: 10px; /* مسافة بين الأزرار */
+    text-align: center;
+  }
+
+  .nav-btn {
+    font-size: 1rem; /* تصغير حجم الخط */
+  }
+}
+  
+  /* الصفحة الأولى */
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh; /* طول الشاشة بالكامل */
+    padding-top: 100px; /* للتأكد أن الهيدر لا يغطي المحتوى */
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  .text-content {
+    max-width: 50%;
+  }
+  
+  .text-content h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem;
+  }
+  
+  .text-content p {
+    font-size: 1.5rem;
+    margin: 0 0 2rem;
+  }
+  
+  .order-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .order-button:hover {
+    background-color: #ddd;
+  }
+  
+  /* تعديل الصورة في السكشن الأول لتكون صغيرة */
+  .image-content img.large-image {
+    width: 50%; /* تصغير الصورة لتكون في المنتصف */
+    height: auto;
+  }
+  
+  /* ستايل السكشن بينفت */
+  .benefits-section {
+    background-color: black;
+    background-image: url('./assets/n.webp');
+    opacity: 0.8; /* تحديد مستوى الشفافية */
+    z-index: -1; /* لضمان أن الصورة في الخلفية ولا تتداخل مع النص */
+
+    background-position: top center;  /* تغيير المكان لجعل الصورة تخرج من الأعلى */
+    background-repeat: no-repeat;
+    background-size: 50%; /* تكبير الصورة لتغطي جزء أكبر من الشاشة */
+    color: white;
+    height: 70vh; /* تأكد من أن هذا القسم يغطي كامل الشاشة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .benefits-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 80%; /* تأكد من أن المحتوى لا يكون ضيق جدًا */
+  }
+  
+  .benefit-item {
+    width: 23%; /* 4 أقسام متساوية */
+    padding: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3); /* خط أبيض خفيف */
+  }
+  
+  .benefit-item:first-child {
+    border-left: none;
+  }
+  
+  .benefit-item:last-child {
+    border-right: none;
+  }
+  
+  .benefit-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefit-item p {
+    font-size: 1rem;
+  }
+  .music-section {
+    background-color: #f1e1b3; /* خلفية بيج */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 5%; /* Padding ليظهر المحتوى بشكل جميل */
+    height: 40vh; /* تأكد من أن السكشن يغطي كامل الشاشة */
+  }
+  
+  .music-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .image-content img {
+    max-width: 80%; /* حجم الصورة بحيث تكون على اليسار */
+    height: auto;
+  }
+  
+  .text-content {
+    max-width: 50%; /* عرض النص بحيث يكون على اليمين */
+  }
+  
+  .text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .order-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .order-button:hover {
+    background-color: #ddd;
+  }
+
+/* السكشن الرابع (ريفيوهات) */
+.reviews-section {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+    color: white; /* تغيير لون النص داخل السكشن إلى الأبيض */
+      }
+      
+      .review-item p {
+        color: rgb(0, 0, 0); /* تغيير لون النص داخل الريفيوز إلى الأبيض */
+      }
+  
+  .reviews-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .review-item {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    .product-item img {
+  width: 200px; /* يمكنك تعديل القيمة حسب الحجم الذي تريده */
+  height: 200px; /* يمكنك تعديل القيمة حسب الحجم الذي تريده */
+  object-fit: cover; /* يضمن أن الصورة تملأ المساحة دون تشويه */
+}
+  }
+  
+  .review-item p {
+    font-size: 1.1em;
+    color: rgb(0, 0, 0); /* تغيير لون النص داخل الريفيوز إلى الأبيض */
+
+    
+  }
+  
+  .arrows {
+    margin-top: 30px;
+  }
+  
+  .arrow-button {
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .arrow-button:hover {
+    color: #007BFF;
+  }
+  .logo h1 {
+    font-size: 19px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px 20px; /* إضافة مسافة حول النص */
+    border-radius: 10px; /* تدوير الحواف */
+  }
+  .reviews-title {
+    text-align: center; /* محاذاة النص في الوسط */
+    color: rgb(0, 0, 0); /* تغيير اللون إلى الأسود */
+    font-size: 24px; /* تغيير حجم الخط */
+    margin-bottom: 20px; /* إضافة مسافة تحت العنوان */
+  }
+ /* التنسيق لصفحة المنتجات */
+.products-section {
+    background: linear-gradient(to right, #dac393, #dbb592);
+    padding: 40px 0;
+    text-align: center;
+    height: 70vh; /* تأكد من أن هذا القسم يغطي كامل الشاشة */
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* أقل من 90px لجعل المربعات أقرب لبعضها */
+  }
+  
+  .product-item {
+    width: 220px;
+    height: 300px;
+    
+    border: 2px solid #00000000; /* حدود المربعات */
+    padding: 20px;
+    background-color: transparent; /* بدون خلفية */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .product-item img {
+    
+        width: 200px; /* يمكنك تعديل القيمة حسب الحجم الذي تريده */
+        height: 200px; /* يمكنك تعديل القيمة حسب الحجم الذي تريده */
+        object-fit: cover; /* يضمن أن الصورة تملأ المساحة دون تشويه */
+      
+  }
+  
+  .product-item h3 {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  
+  .product-item p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .product-item button {
+    margin-top: 10px;
+    background-color: transparent; /* خلفية الزر شفافة */
+    color: #000; /* لون النص أسود */
+    padding: 10px 20px; /* حجم الزر */
+    border: 2px solid #000; /* حدود الزر باللون الأسود */
+    border-radius: 5px; /* حواف الزر مستديرة */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+    transition: background-color 0.3s ease, color 0.3s ease; /* تأثيرات عند التغيير */
+}
+
+/* تغيير اللون عند المرور على الزر */
+.product-item button:hover {
+    background-color: #000; /* خلفية الزر تصبح سوداء عند المرور عليه */
+    color: white; /* لون النص يصبح أبيض عند المرور عليه */
+}
+.contact-section {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #1d191649, #271607);
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.subscribe-form input {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.subscribe-form button {
+    margin-top: 10px;
+    background-color: transparent; /* خلفية الزر شفافة */
+    color: #000; /* لون النص أسود */
+    padding: 10px 20px; /* حجم الزر */
+    border: 2px solid #000; /* حدود الزر باللون الأسود */
+    border-radius: 5px; /* حواف الزر مستديرة */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+    transition: background-color 0.3s ease, color 0.3s ease; /* تأثيرات عند التغيير */
+}
+
+.subscribe-form button:hover {
+    background-color: #000; /* خلفية الزر تصبح سوداء عند المرور عليه */
+    color: white; /* لون النص يصبح أبيض عند المرور عليه */
+}
+.empty-section {
+    height: 50vh; /* يمكنك تعديل الارتفاع حسب الحاجة */
+
+    background-image: url('./assets/g.avif');
+    background-size: cover;
+    background-position: center;
+}
+footer {
+    background: linear-gradient(to right, #c5c5c3, #b8b8b8);
+    color: white; /* النص باللون الأبيض */
+    padding: 20px 0; /* مسافة من الأعلى والأسفل */
+    text-align: center; /* توسيط النص */
+  }
+  
+  .footer-container {
+    max-width: 1200px; /* أقصى عرض للـ footer */
+    margin: 0 auto; /* توسيط الـ footer داخل الصفحة */
+  }
+  
+  footer p {
+    margin: 10px 0; /* مسافة بين الفقرات */
+    font-size: 14px; /* حجم الخط */
+  }
+  
+  footer .social-links {
+    margin-top: 10px; /* مسافة من النص العلوي */
+  }
+  
+  footer .social-links a {
+    color: white; /* رابط أبيض */
+    margin: 0 10px; /* مسافة بين الروابط */
+    text-decoration: none; /* إزالة الخط أسفل الرابط */
+    font-size: 16px; /* حجم الخط */
+  }
+  
+  footer .social-links a:hover {
+    color: #ff7f50; /* تغيير اللون عند التمرير فوق الرابط */
+  }
+  
+
+/* تصميم للأجهزة اللوحية (Tablet) */
+@media (max-width: 1024px) {
+  .header {
+    width: 90%; /* تضييق عرض الهيدر */
+    padding: 15px 5%; /* تعديل الحواف */
+  }
+
+  .nav {
+    gap: 20px; /* تقليل المسافة بين الأزرار */
+  }
+
+  .content {
+    flex-direction: column; /* ترتيب النص والصورة عموديًا */
+    text-align: center;
+  }
+
+  .text-content {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .image-content img.large-image {
+    width: 70%; /* تصغير الصورة أكثر للأجهزة اللوحية */
+  }
+
+  .benefits-content {
+    flex-direction: column; /* ترتيب العناصر بشكل عمودي */
+    align-items: center;
+  }
+
+  .benefit-item {
+    width: 80%; /* زيادة عرض العناصر */
+    border-left: none; /* إزالة الخط الجانبي */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* خط سفلي */
+    padding-bottom: 15px;
+  }
+
+  .benefit-item:last-child {
+    border-bottom: none; /* إزالة الخط من آخر عنصر */
+  }
+}
+
+/* تصميم للجوالات الصغيرة (Mobile) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* ترتيب الهيدر عموديًا */
+    padding: 10px;
+  }
+
+  .nav {
+    flex-direction: column; /* جعل الروابط بشكل عمودي */
+    margin: 10px 0;
+    gap: 10px;
+  }
+
+  .content {
+    padding: 50px 5%; /* تقليل الحواف */
+    text-align: center;
+    height: auto; /* السماح للطول بالتكيف */
+  }
+
+  .text-content h1 {
+    font-size: 2rem; /* تصغير العناوين */
+  }
+
+  .text-content p {
+    font-size: 1rem;
+  }
+
+  .image-content img.large-image {
+    width: 90%; /* جعل الصورة تغطي عرض أكبر */
+  }
+
+  .benefits-content {
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    text-align: center;
+  }
+
+  .benefit-item {
+    width: 100%;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 15px;
+  }
+
+  .benefit-item:last-child {
+    border-bottom: none;
+  }
+
+  .music-section {
+    flex-direction: column; /* ترتيب السكشن عموديًا */
+    text-align: center;
+    height: auto;
+  }
+
+  .text-content {
+    max-width: 100%;
+  }
+
+  .reviews-content {
+    flex-direction: column; /* ترتيب الريفيوهات بشكل عمودي */
+    gap: 20px;
+  }
+
+  .review-item {
+    width: 100%;
+  }
+
+  .product-list {
+    flex-direction: column; /* ترتيب المنتجات عموديًا */
+    gap: 20px;
+  }
+
+  .product-item {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .contact-section {
+    padding: 20px;
+  }
+
+  .subscribe-form input,
+  .subscribe-form button {
+    width: 90%; /* توسيع الحقول والأزرار */
+  }
+}
